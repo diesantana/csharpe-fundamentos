@@ -1,0 +1,15 @@
+C:\estudos\csharpe\TipoDeDados\TipoDeDados\bin\Debug\net8.0\TipoDeDados.exe
+C:\estudos\csharpe\TipoDeDados\TipoDeDados\bin\Debug\net8.0\TipoDeDados.deps.json
+C:\estudos\csharpe\TipoDeDados\TipoDeDados\bin\Debug\net8.0\TipoDeDados.runtimeconfig.json
+C:\estudos\csharpe\TipoDeDados\TipoDeDados\bin\Debug\net8.0\TipoDeDados.dll
+C:\estudos\csharpe\TipoDeDados\TipoDeDados\bin\Debug\net8.0\TipoDeDados.pdb
+C:\estudos\csharpe\TipoDeDados\TipoDeDados\obj\Debug\net8.0\TipoDeDados.GeneratedMSBuildEditorConfig.editorconfig
+C:\estudos\csharpe\TipoDeDados\TipoDeDados\obj\Debug\net8.0\TipoDeDados.AssemblyInfoInputs.cache
+C:\estudos\csharpe\TipoDeDados\TipoDeDados\obj\Debug\net8.0\TipoDeDados.AssemblyInfo.cs
+C:\estudos\csharpe\TipoDeDados\TipoDeDados\obj\Debug\net8.0\TipoDeDados.csproj.CoreCompileInputs.cache
+C:\estudos\csharpe\TipoDeDados\TipoDeDados\obj\Debug\net8.0\TipoDeDados.sourcelink.json
+C:\estudos\csharpe\TipoDeDados\TipoDeDados\obj\Debug\net8.0\TipoDeDados.dll
+C:\estudos\csharpe\TipoDeDados\TipoDeDados\obj\Debug\net8.0\refint\TipoDeDados.dll
+C:\estudos\csharpe\TipoDeDados\TipoDeDados\obj\Debug\net8.0\TipoDeDados.pdb
+C:\estudos\csharpe\TipoDeDados\TipoDeDados\obj\Debug\net8.0\TipoDeDados.genruntimeconfig.cache
+C:\estudos\csharpe\TipoDeDados\TipoDeDados\obj\Debug\net8.0\ref\TipoDeDados.dll
