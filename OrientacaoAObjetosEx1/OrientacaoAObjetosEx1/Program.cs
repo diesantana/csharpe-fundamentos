@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace OrientacaoAObjetosEx1
+namespace OrientacaoAObjetosProblema1
 {
     internal class Program
     {
