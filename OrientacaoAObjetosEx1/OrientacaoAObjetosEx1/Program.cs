@@ -8,17 +8,27 @@ namespace OrientacaoAObjetosEx1
         static void Main(string[] args)
         {
             Console.WriteLine("Entre com as medidas do triângulo X");
-            double xA = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            double xB = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);  
-            double xC = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            double a = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            double b = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);  
+            double c = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            Triangulo x = new Triangulo();
+            x.LadoA = a;
+            x.LadoB = b;
+            x.LadoC = c;
 
             Console.WriteLine("Entre com as medidas do triângulo Y");
-            double yA = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            double yB = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            double yC = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            a = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            b = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            c = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            double areaX = calcArea(xA, xB, xC);
-            double areaY = calcArea(yA, yB, yC);
+            Triangulo y = new Triangulo();
+            y.LadoA = a;
+            y.LadoB = b;
+            y.LadoC = c;
+
+            double areaX = CalcArea(x);
+            double areaY = CalcArea(y);
         
             Console.WriteLine($"Àrea de X = {areaX.ToString("F4", CultureInfo.InvariantCulture)}");
             Console.WriteLine($"Àrea de Y = {areaY.ToString("F4", CultureInfo.InvariantCulture)}");
@@ -33,10 +43,10 @@ namespace OrientacaoAObjetosEx1
             }
         }
 
-        static double calcArea(double ladoA, double ladoB, double ladoC)
+        static double CalcArea(Triangulo triangulo)
         {
-           double p = (ladoA + ladoB + ladoC) / 2;
-           double area = Math.Sqrt(p * (p - ladoA) * (p - ladoB) * (p - ladoC));
+           double p = (triangulo.LadoA + triangulo.LadoB + triangulo.LadoC) / 2;
+           double area = Math.Sqrt(p * (p - triangulo.LadoA) * (p - triangulo.LadoB) * (p - triangulo.LadoC));
             return area;
         }
     }
