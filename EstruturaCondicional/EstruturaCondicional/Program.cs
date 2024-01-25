@@ -1,34 +1,23 @@
 ﻿using System;
+using System.Globalization;
 namespace EstruturaCondicional
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Digite três números:");
-            int n1 = int.Parse(Console.ReadLine());
-            int n2 = int.Parse(Console.ReadLine());
-            int n3 = int.Parse(Console.ReadLine());
-            double resultado = Maior(n1, n2, n3);
-            Console.WriteLine("Maior = " + resultado);      
-        }
+            Console.Write("Digite um número: ");
+            int numero = int.Parse(Console.ReadLine());
 
-        static int Maior(int a, int b, int c)
-        {
-            int m;
-            if (a > b && a > c)
+            while (numero > 0)
             {
-                m = a;
+                double raiz = Math.Sqrt(numero);
+                Console.WriteLine(raiz.ToString("F3", CultureInfo.InvariantCulture));
+
+                Console.Write("Digite outro número: ");
+                numero = int.Parse(Console.ReadLine());
             }
-            else if (b > c)
-            {
-                m = b;
-            }
-            else
-            {
-                m = c;
-            }
-            return m;
+            Console.WriteLine("Número negativo!");
         }
     }
 }
