@@ -27,13 +27,11 @@ namespace OrientacaoAObjetosEx1
             y.LadoB = b;
             y.LadoC = c;
 
-            double areaX = CalcArea(x);
-            double areaY = CalcArea(y);
         
-            Console.WriteLine($"Àrea de X = {areaX.ToString("F4", CultureInfo.InvariantCulture)}");
-            Console.WriteLine($"Àrea de Y = {areaY.ToString("F4", CultureInfo.InvariantCulture)}");
+            Console.WriteLine($"Àrea de X = {x.Area().ToString("F4", CultureInfo.InvariantCulture)}");
+            Console.WriteLine($"Àrea de Y = {y.Area().ToString("F4", CultureInfo.InvariantCulture)}");
 
-            if (areaX > areaY)
+            if (x.Area() > y.Area())
             {
                 Console.WriteLine("Maior área: X");
             }
@@ -41,13 +39,6 @@ namespace OrientacaoAObjetosEx1
             {
                 Console.WriteLine("Maior área: Y");
             }
-        }
-
-        static double CalcArea(Triangulo triangulo)
-        {
-           double p = (triangulo.LadoA + triangulo.LadoB + triangulo.LadoC) / 2;
-           double area = Math.Sqrt(p * (p - triangulo.LadoA) * (p - triangulo.LadoB) * (p - triangulo.LadoC));
-            return area;
         }
     }
 }
