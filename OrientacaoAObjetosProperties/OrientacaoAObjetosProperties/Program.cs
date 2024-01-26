@@ -10,6 +10,6 @@ produto.Nome = "T"; // O VALOR NÃO É ACEITO
 
 Console.WriteLine(produto.Nome); // TV
 
-produto.Nome = "TV 4K";
+produto.Nome = "TV 4K"; // O VALOR É ACEITO
 
-Console.WriteLine(produto.Nome);
+Console.WriteLine(produto.Nome); // TV 4K
