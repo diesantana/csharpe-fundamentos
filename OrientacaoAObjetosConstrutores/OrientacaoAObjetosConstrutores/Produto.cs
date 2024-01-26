@@ -13,12 +13,24 @@ namespace OrientacaoAObjetosConstrutores
         public double Preco;
         public int Quantidade;
 
-        public Produto(string nome, double preco, int quantidade)
+        public Produto()
+        {
+        }
+
+        public Produto(string nome, double preco)
         {
             Nome = nome;
             Preco = preco;
+            Quantidade = 0;
+        }
+        public Produto(string nome, double preco, int quantidade) : this(nome, preco)
+        {
             Quantidade = quantidade;
         }
+
+        public string GetNome() { return Nome; }
+
+        public void SetNome(string nome) { Nome = nome; }
 
         public double ValorTotalEmEstoque()
         {
