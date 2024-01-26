@@ -21,7 +21,7 @@ namespace OrientacaoAObjetosExercicios6
 
         public ContaBancaria(int numeroDaConta, string nome,double depositoInicial) :this (numeroDaConta, nome)
         {
-            Saldo = depositoInicial;
+            Deposito(depositoInicial);
         }
 
         public void Deposito(double valor)
