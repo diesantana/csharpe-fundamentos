@@ -28,14 +28,28 @@ Console.WriteLine();
 Console.WriteLine();
 Console.WriteLine("Padrão ISO 8601");
 
+// Unspecified 
 DateTime x = DateTime.Parse("2005-05-03 13:45:30");  // 03/05/2005 13:45:30
+
+// UTC
 DateTime y = DateTime.Parse("2005-05-03T13:45:30z"); // 03/05/2005 10:45:30
 
 Console.WriteLine(x);
 Console.WriteLine(y);
 
+Console.WriteLine(x.Kind); // Unspecified
+Console.WriteLine(y.Kind); //  Local
 
+Console.WriteLine();
+Console.WriteLine();
 
+DateTime dateTime = DateTime.Parse("2005-05-03T13:45:30z"); // 03/05/2005 10:45:30
+
+string dateString = dateTime.ToString("yyyy-MM-ddTHH:mm:ssZ"); // cuidado
+Console.WriteLine(dateString); // 2005-05-03T10:45:30Z
+
+string dateString2 = dateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ");
+Console.WriteLine(dateString2); // 2005-05-03T13:45:30Z
 
 
 
