@@ -1,5 +1,6 @@
 ﻿
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text;
 
 namespace AulaComposicaoStringBuilder.Entities
 {
@@ -21,11 +22,27 @@ namespace AulaComposicaoStringBuilder.Entities
             Likes = likes;
         }
 
+        public void AddComment(Comment comment)
+        {
+            Comments.Add(comment);
+        }
+        public void RemoveComment(Comment comment)
+        {
+            Comments.Remove(comment);
+        }
         public override string ToString()
         {
-            return Title + "\n" +
-                Likes + " Likes - " + Moment + "\n" + 
-                Content;
+            StringBuilder sb = new StringBuilder(); 
+            sb.AppendLine(Title);
+            sb.AppendLine($"{Likes} Likes - {Moment}");
+            sb.AppendLine(Content);
+            sb.AppendLine("Comments:");
+            foreach (Comment comment in Comments )
+            {
+                sb.AppendLine(comment.ToString());
+            }
+            return sb.ToString();
         }
+
     }
 }

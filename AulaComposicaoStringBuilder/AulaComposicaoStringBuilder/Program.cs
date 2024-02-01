@@ -10,17 +10,9 @@ Post post1 = new Post(dateTime, title, content, likes);
 string comment1 = "Have a nice trip";
 string comment2 = "Wow that's awesome!";
 
-post1.Comments.Add(new Comment(comment1));
-post1.Comments.Add(new Comment(comment2));
-
+post1.AddComment(new Comment(comment1));
+post1.AddComment(new Comment(comment2));
 Console.WriteLine(post1);
-Console.WriteLine("Comments:");
-foreach (Comment comment in post1.Comments)
-{
-    Console.WriteLine(comment);
-}
-
-Console.WriteLine();
 
 dateTime = DateTime.Parse("28/07/2018 23:14:19");
 title = "Good night guys";
@@ -31,12 +23,7 @@ Post post2 = new Post(dateTime, title, content, likes);
 comment1 = "Good night";
 comment2 = "May the Force be with you";
 
-post2.Comments.Add(new Comment(comment1));
-post2.Comments.Add(new Comment(comment2));
+post2.AddComment(new Comment(comment1));
+post2.AddComment(new Comment(comment2));
 
 Console.WriteLine(post2);
-Console.WriteLine("Comments:");
-foreach (Comment comment in post2.Comments)
-{
-    Console.WriteLine(comment);
-}
