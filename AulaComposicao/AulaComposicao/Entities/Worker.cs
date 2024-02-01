@@ -43,7 +43,7 @@ namespace AulaComposicao.Entities
         public double Income(int year, int month)
         {
             double sum = 0.0;
-            // Lista de contratos dados o mês e o ano
+            // Lista de contratos dado o mês e o ano
             List<HourContract> hourContracts = Contracts.FindAll(x => x.Date.Month == month && x.Date.Year == year);
             foreach (HourContract hourContract in hourContracts)
             {

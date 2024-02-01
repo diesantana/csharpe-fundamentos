@@ -41,9 +41,7 @@ Console.WriteLine();
 Console.Write("Enter month and year to calculate income (MM/YYYY): ");
 string dateIncome = Console.ReadLine();
 string[] fildsDate = dateIncome.Split('/');
-double salary = worker.Income(int.Parse(fildsDate[1]), int.Parse(fildsDate[0]));
+double income = worker.Income(int.Parse(fildsDate[1]), int.Parse(fildsDate[0]));
 Console.WriteLine("Name: " + worker.Name);
 Console.WriteLine("Department: " + worker.Department);
-Console.WriteLine($"Income for {dateIncome}: {salary.ToString("F2", CultureInfo.InvariantCulture)}");
-
-
+Console.WriteLine($"Income for {dateIncome}: {income.ToString("F2", CultureInfo.InvariantCulture)}");
