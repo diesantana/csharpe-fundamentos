@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AulaSobreposicao.Entities
 {
-    internal class SavingsAccount : Account
+    internal sealed class SavingsAccount : Account
     {
         public double InterestRate { get; set; }
 
