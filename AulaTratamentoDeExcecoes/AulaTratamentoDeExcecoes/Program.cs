@@ -1,23 +1,20 @@
 ﻿using AulaTratamentoDeExcecoes.Entities;
+using AulaTratamentoDeExcecoes.Entities.Exceptions;
 
-
-Console.Write("Room number: ");
-int romNumber = int.Parse(Console.ReadLine());
-
-Console.Write("Check-in date (dd/MM/yyyy): ");
-string sChekIn = Console.ReadLine();
-DateTime checkIn = DateTime.Parse(sChekIn);
-
-Console.Write("Check-out date (dd/MM/yyyy): ");
-string sChekOut = Console.ReadLine();
-DateTime checkOut = DateTime.Parse(sChekOut);
-
-if (checkOut <= checkIn)
+try
 {
-    Console.WriteLine("Error in reservation: Check-out date must be after chek-in date");
-}
-else
-{
+    Console.Write("Room number: ");
+    int romNumber = int.Parse(Console.ReadLine());
+
+    Console.Write("Check-in date (dd/MM/yyyy): ");
+    string sChekIn = Console.ReadLine();
+    DateTime checkIn = DateTime.Parse(sChekIn);
+
+    Console.Write("Check-out date (dd/MM/yyyy): ");
+    string sChekOut = Console.ReadLine();
+    DateTime checkOut = DateTime.Parse(sChekOut);
+
+
     Reservation reservation = new Reservation(romNumber, checkIn, checkOut);
     Console.WriteLine("Reservation: " + reservation);
     Console.WriteLine();
@@ -31,22 +28,11 @@ else
     sChekOut = Console.ReadLine();
     checkOut = DateTime.Parse(sChekOut);
 
-    DateTime now = DateTime.Now;
-    if (checkIn <= now || checkOut <= now)
-    {
-        Console.WriteLine("Error in reservation: Reservation dates for update must be future dates");
-    }
-    else if (checkOut <= checkIn)
-    {
-        Console.WriteLine("Error in reservation: Check-out date must be after chek-in date");
-    }
-    else
-    {
-        reservation.UpdateDates(checkIn, checkOut);
-        Console.WriteLine("Reservation: " + reservation);
 
-    }
-
+    reservation.UpdateDates(checkIn, checkOut);
+    Console.WriteLine("Reservation: " + reservation);
 }
-
-
+catch (DomainException e)
+{
+    Console.WriteLine("Error in Reservation: " + e.Message);
+}
