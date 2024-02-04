@@ -1,15 +1,17 @@
 ﻿
 
 string path = @"c:\temp\file1.txt";
-FileStream fs = null;
 StreamReader sr = null;
 
 try
 {
-    fs = new FileStream(path, FileMode.Open); // abre o arquivo
-    sr = new StreamReader(fs);                // Stream para Ler o arquivo 
-    string linha = sr.ReadLine();
-    Console.WriteLine(linha);
+    sr = File.OpenText(path);  // Instancia um StreamReader a partir do File, com UTF8 (File.OpenText) 
+    while (!sr.EndOfStream)
+    {
+        string line = sr.ReadLine();
+        Console.WriteLine(line);
+    }
+
 }
 catch (IOException e)
 {
@@ -18,6 +20,5 @@ catch (IOException e)
 }
 finally
 {
-    if(sr != null) sr.Close();  //fecha o StreamReader se ele estiver aberto (!null)
-    if(fs != null) fs.Close();  //fecha o FileStream se ele estiver aberto (!null)
+    if (sr != null) sr.Close();  //fecha o StreamReader se ele estiver aberto (!null)
 }
