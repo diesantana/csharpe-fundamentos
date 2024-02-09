@@ -12,8 +12,11 @@ namespace Course
             products.Add(new Product("Tablet", 350.50));
             products.Add(new Product("HD Case", 80.90));
 
+            // Criando um delegate (ponteiro para a função)
+            Action<Product> action = product => { product.Price += product.Price * 0.1; };
+
             // chamando a função direto método
-            products.ForEach(UpdatePrice);
+            products.ForEach(action);
 
             foreach (var product in products)
             {
@@ -21,10 +24,5 @@ namespace Course
             }
         }
 
-        // função auxiliar
-        public static void UpdatePrice(Product p)
-        {
-            p.Price += p.Price * 0.1;
-        }
     }
 }
