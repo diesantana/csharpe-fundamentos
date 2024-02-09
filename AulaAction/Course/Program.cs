@@ -12,11 +12,11 @@ namespace Course
             products.Add(new Product("Tablet", 350.50));
             products.Add(new Product("HD Case", 80.90));
 
-            // Criando um delegate (ponteiro para a função)
-            Action<Product> action = product => { product.Price += product.Price * 0.1; };
+            // expressão lambda direto método
+            products.ForEach(product => product.Price += product.Price * 0.1); 
 
-            // chamando a função direto método
-            products.ForEach(action);
+            // lambda com mais de uma instrução 
+            products.ForEach(product => { product.Price += product.Price * 0.1; product.Price += 100.0; });
 
             foreach (var product in products)
             {
