@@ -12,8 +12,11 @@ namespace AulaFunc
             products.Add(new Product("Tablet", 350.50));
             products.Add(new Product("HD Case", 80.90));
 
+            // criando uma referencia para o método (delegate)
+            Func<Product, string> func = p => p.Name.ToUpper();
+
             // chamada do método
-            List<string> result = products.Select(NamesUpper).ToList();
+            List<string> result = products.Select(func).ToList();
 
             result.ForEach(x => Console.WriteLine(x));
         }
