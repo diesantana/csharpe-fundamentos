@@ -4,6 +4,15 @@ namespace Course
 {
     internal class Program
     {
+        static void PrintList<T>(string message, IEnumerable<T> collection) 
+        {
+            Console.WriteLine(message + ":");
+            foreach (var item in collection)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine();
+        }
         static void Main(string[] args)
         {
             Category c1 = new Category() { Id = 1, Name = "Tools", Tier = 2 };
@@ -24,6 +33,8 @@ namespace Course
                 new Product() { Id = 10, Name = "Sound Bar", Price = 700.0, Category = c3 },
                 new Product() { Id = 11, Name = "Level", Price = 70.0, Category = c1 }
             };
+
+            PrintList("Produtos", products);
         }
     }
 }
