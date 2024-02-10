@@ -83,6 +83,49 @@ namespace Course
             Console.WriteLine("SINGLE VALUE NULL: " + teste11);
             Console.WriteLine();
 
+            // MAX & MIN 
+            var teste12 = products.Max(p => p.Price);
+            Console.WriteLine("Max:" + teste12);
+            var teste13 = products.Min(p => p.Price);
+            Console.WriteLine("Min:" + teste13);
+            Console.WriteLine();
+
+            // SUM & AVERAGE 
+            var teste14 = products.Where(p => p.Category.Id == 1).Sum(p => p.Price);
+            Console.WriteLine("Sum Category 1: " + teste14);
+            Console.WriteLine();
+            var teste15 = products.Where(p => p.Category.Id == 1).Average(p => p.Price);
+            Console.WriteLine("Average category 1: " + teste15);
+            Console.WriteLine();
+
+            // Safe Average
+            var teste16 = products.Where(p => p.Category.Id == 15).Select(p => p.Price).DefaultIfEmpty(0.0).Average();
+            Console.WriteLine("Safe Average category 1: " + teste16);
+            Console.WriteLine();
+
+            // Aggregate 
+            var teste17 = products
+                .Where(p => p.Category.Id == 1)
+                .Select(p => p.Price)
+                .Aggregate(0.0, (acc, sum) => acc + sum);
+            Console.WriteLine("Aggregate sum  category 1: " + teste17);
+            Console.WriteLine();
+
+            // Grouping  
+            var teste18 = products.GroupBy(p => p.Category);
+            foreach ( var group in teste18)
+            {
+                // Nomes das categorias
+                Console.WriteLine(group.Key.Name); 
+
+                // item de cada categoria
+                foreach( var groupItem in group)
+                {
+                    Console.WriteLine(groupItem);
+                }
+                Console.WriteLine();
+            }
+
         }
 
     }
